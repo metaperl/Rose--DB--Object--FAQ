@@ -13,6 +13,11 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More' => 0,
+
+		  Rose::Conf => 0,
+		  Rose::DB::Object => 0,
+
+		  App::Cmd
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Rose-DB-Object-FAQ-*' },

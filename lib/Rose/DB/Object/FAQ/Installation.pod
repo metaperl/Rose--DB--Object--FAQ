@@ -1,0 +1,41 @@
+=head1 NAME
+
+Installation instructions
+
+=head1 INSTRUCTIONS
+
+=head2 Download the Sakila database 
+
+You can find it under "Example Databases" at L<http://dev.mysql.com/doc/>.
+
+I suggest putting it in $DIST/rsrc.
+
+There is a script there that will download and unpack the
+database. Ideally it would apply a patch to fix the sql errors, but
+that is a project for another time.
+
+=head3 Fix the SQL errors
+
+Once downloaded, unpack it and fix the sql as follows.
+
+a.postal_code AS `zip code` should be 
+a.postal_code AS `zip_code`.
+
+This problem occurs twice. Hopefully my forum posts
+L<http://forums.mysql.com/read.php?121,276811,276811#msg-276811> will
+lead to this being addressed
+
+=head3 Load into MySQL
+
+Follow the instructions for loading it into MySQL given at
+L<http://dev.mysql.com/doc/sakila/en/sakila.html>. 
+
+
+=head2 Configure your database connection
+
+in F<$DIST/lib/MyDB.pm> are parameters for connecting to a database. I
+am using L<Rose::Conf> (in particular L<Rose::Conf::FileBased>) for
+configuration, so the actual connection parameters for the database
+our outside of source control in a F<local.conf> file.
+
+=head3 Optionally create $ENV{'ROSE_CONF_FILE_ROOT'}/local.conf

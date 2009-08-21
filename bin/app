@@ -1,0 +1,38 @@
+#!/bin/env perl     
+
+package MyApp;
+
+use FindBin;
+use lib "$FindBin::Bin/../lib";
+
+use App::Cmd::Setup -app;
+
+
+
+
+
+load_modules();
+
+MyApp->run;
+
+
+sub load_modules {
+    my @class = qw(Actor);
+    for my $class (@class) 
+    {
+	warn $class;
+
+	my $klass = "MySchema::$class";
+	
+	use Class::MOP;
+
+	Class::MOP::load_class($klass);
+	$klass .= "::Manager";
+	Class::MOP::load_class("$klass");
+
+    }
+}
+
+
+
+

@@ -1,0 +1,63 @@
+#!/usr/bin/perl
+
+use strict; use warnings;
+
+use FindBin;
+use lib "$FindBin::Bin../lib";
+
+
+use Data::Dumper;
+
+use MySchema::Actor;
+use MySchema::Actor::Manager;
+
+
+my $actors = MySchema::Actor::Manager->get_actor;
+
+my $count;
+for my $actor (@$actors) {
+    warn $actor->first_name;
+    last if ++$count > 5;
+}
+}
+
+list_actors;
+
+my $a = MySchema::Actor->new(actor_id => 12);
+$a->load;
+
+warn $a->last_update;
+
+warn '------';
+
+
+my $a = MySchema::Actor->new
+(
+ first_name => 'Peter',
+ last_name => 'Norvig'
+);
+my $id = $a->save;
+
+warn $a->actor_id;
+
+
+my $actors = MySchema::Actor::Manager->get_actor
+  (
+   query => [ last_name => { like => 'Bran%' }]
+  );
+
+my ($actor) = @$actors;
+
+$actor->first_name('Darby');
+
+warn Dumper($actor->first_name);
+
+$actor->save;
+
+my $rows_updated = MySchema::Actor::Manager->update_actor
+  (
+   set   => { last_name => 'Brock' },
+   where => [ actor_id => { gt => 188 } ]
+  );
+
+warn "$rows_updated rows updated.";
