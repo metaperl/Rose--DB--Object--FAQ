@@ -1,11 +1,11 @@
 #!/bin/env perl     
 
-package MyApp;
+
 
 use FindBin;
 use lib "$FindBin::Bin/../lib";
 
-use App::Cmd::Setup -app;
+use MyApp;
 
 
 
