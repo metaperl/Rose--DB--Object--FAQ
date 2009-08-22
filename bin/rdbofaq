@@ -8,10 +8,10 @@ use lib "$FindBin::Bin/../lib";
 use MyApp;
 
 
-
-
-
 load_modules();
+
+$Rose::DB::Object::Manager::Debug = 1;
+$Rose::DB::Object::Debug = 1;
 
 MyApp->run;
 

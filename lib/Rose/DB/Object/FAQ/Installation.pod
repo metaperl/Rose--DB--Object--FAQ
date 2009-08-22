@@ -5,7 +5,9 @@ Installation instructions
 
 =head2 Download the Sakila database 
 
-Just run F<$DIST/bin/get-db> 
+  cd $DIST/bin
+  ./get-db
+
 
 This will download the Sakila database and fix two typos in the
 schema: L<http://forums.mysql.com/read.php?121,276811,276811#msg-276811>
@@ -13,7 +15,8 @@ schema: L<http://forums.mysql.com/read.php?121,276811,276811#msg-276811>
 
 =head2 Install Sakila Database
 
-Run F<$DIST/bin/build-db.pl> 
+  cd $DIST/bin
+  ./build-db.pl
 
 This script will build a configuration file, F<$DIST/bin/local.conf>
 which will be used by L</Rose::DB::Object> in the subsequent steps. It
@@ -24,7 +27,7 @@ For some reason, these commands don't work from within a Perl program.
 
 =head2 Point Rose::DB::Object::Loader at the Sakila database
 
-After sourcing the config file, run loader:pl:
+Sourcing the config file, <B>then</b> run loader:pl:
 
   cd $DIST/bin
   . ./config

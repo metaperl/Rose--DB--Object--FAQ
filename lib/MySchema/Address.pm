@@ -33,18 +33,6 @@ __PACKAGE__->meta->setup(
             column_map => { address_id => 'address_id' },
             type       => 'one to many',
         },
-
-        staff => {
-            class      => 'MySchema::Staff',
-            column_map => { address_id => 'address_id' },
-            type       => 'one to many',
-        },
-
-        store => {
-            class      => 'MySchema::Store',
-            column_map => { address_id => 'address_id' },
-            type       => 'one to many',
-        },
     ],
 );
 

@@ -4,19 +4,21 @@ use MyApp -command;
 use strict;
 use warnings;
 
+
+
 sub run 
 {
     my ($self, $opt, $args) = @_;
 
     use Data::Dumper;
-    warn Dumper($args); # $args is an arrayref
+    #warn Dumper($args); # $args is an arrayref
  
     my $rows_updated = MySchema::Actor::Manager->update_actor
       (
        set   => { last_name => 'Brock' },
        where => 
        [ 
-	[ \'actor_id => BETWEEN ? AND ?', @$args ] 
+	[ \'actor_id BETWEEN ? AND ?', @$args ] 
        ] 
       );
 

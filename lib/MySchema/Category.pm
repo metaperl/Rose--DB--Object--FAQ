@@ -14,14 +14,6 @@ __PACKAGE__->meta->setup(
     ],
 
     primary_key_columns => [ 'category_id' ],
-
-    relationships => [
-        film_category => {
-            class      => 'MySchema::FilmCategory',
-            column_map => { category_id => 'category_id' },
-            type       => 'one to many',
-        },
-    ],
 );
 
 1;

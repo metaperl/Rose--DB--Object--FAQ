@@ -15,14 +15,6 @@ __PACKAGE__->meta->setup(
     ],
 
     primary_key_columns => [ 'actor_id' ],
-
-    relationships => [
-        film_actor => {
-            class      => 'MySchema::FilmActor',
-            column_map => { actor_id => 'actor_id' },
-            type       => 'one to many',
-        },
-    ],
 );
 
 1;
