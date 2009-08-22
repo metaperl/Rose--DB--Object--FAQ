@@ -16,9 +16,9 @@ MyDB->register_db
    type     => 'main',
    driver   => 'MySQL',
    database => $SYS_CONF{'database'},
-   host => $SYS_CONF{host},
-   username  => $SYS_CONF{username},
-   password  => $SYS_CONF{password},
+   host     => $SYS_CONF{host},
+   username => $SYS_CONF{username},
+   password => $SYS_CONF{password},
 
   );
 
