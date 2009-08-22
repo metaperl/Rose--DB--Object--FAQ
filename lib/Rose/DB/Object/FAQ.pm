@@ -1,56 +1,38 @@
-package Rose::DB::Object::FAQ;
+package Rose::DB::Object::FAQ;     
 
 use warnings;
 use strict;
 
-=head1 NAME
-
-Rose::DB::Object::FAQ - The great new Rose::DB::Object::FAQ!
-
-=head1 VERSION
-
-Version 0.01
-
-=cut
 
 our $VERSION = '0.01';
 
+=head1 NAME
 
-=head1 SYNOPSIS
-
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
-
-    use Rose::DB::Object::FAQ;
-
-    my $foo = Rose::DB::Object::FAQ->new();
-    ...
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
-
-=head1 FUNCTIONS
-
-=head2 function1
-
-=cut
-
-sub function1 {
-}
-
-=head2 function2
-
-=cut
-
-sub function2 {
-}
+Rose::DB::Object::FAQ - FAQ for the Perl ORM Rose::DB::Object
 
 =head1 AUTHOR
 
 Terrence Brannon, C<< <metaperl at gmail.com> >>
+
+=head1 Meta Questions
+
+=head2 How to see what entire SQL I have produced
+
+  $Rose::DB::Object::Manager::Debug = 1;
+  $Rose::DB::Object::Debug = 1;
+
+=head2 How to control RDBO error throwing?
+
+L<http://groups.google.com/group/rose-db-object/browse_thread/thread/ad0ebc1e8af314ce#>
+
+=head1 SQL Generation
+
+=head2 How to get literal SQL
+
+It's documented here:
+L<http://search.cpan.org/dist/Rose-DB-Object/lib/Rose/DB/Object/QueryBuilder.pm#query> 
+
+
 
 =head1 BUGS
 
@@ -59,39 +41,9 @@ the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Rose-DB-Ob
 automatically be notified of progress on your bug as I make changes.
 
 
-
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Rose::DB::Object::FAQ
-
-
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Rose-DB-Object-FAQ>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Rose-DB-Object-FAQ>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Rose-DB-Object-FAQ>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Rose-DB-Object-FAQ/>
-
-=back
-
-
 =head1 ACKNOWLEDGEMENTS
+
+Peter Karman (karpet)
 
 
 =head1 COPYRIGHT & LICENSE

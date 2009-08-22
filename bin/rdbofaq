@@ -17,7 +17,7 @@ MyApp->run;
 
 
 sub load_modules {
-    my @class = qw(Actor);
+    my @class = qw(Actor Address);
     for my $class (@class) 
     {
 	warn $class;
