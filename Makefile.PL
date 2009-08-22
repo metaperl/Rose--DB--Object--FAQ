@@ -11,13 +11,12 @@ WriteMakefile(
       ? ('LICENSE'=> 'perl')
       : ()),
     PL_FILES            => {},
-    PREREQ_PM => {
-        'Test::More' => 0,
-
-		  Rose::Conf => 0,
-		  Rose::DB::Object => 0,
-
-		  App::Cmd
+    PREREQ_PM => 
+	      {
+	       'Test::More' => 0,
+	       'Rose::Conf' => 0,
+	       'Rose::DB::Object' => 0,
+	       'App::Cmd' => 0
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Rose-DB-Object-FAQ-*' },
