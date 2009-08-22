@@ -1,1 +1,2 @@
-export ROSE_CONF_FILE_ROOT=$HOME
+export ROSE_CONF_FILE_ROOT=`pwd`
+

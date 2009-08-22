@@ -2,40 +2,42 @@
 
 Installation instructions
 
-=head1 INSTRUCTIONS
 
 =head2 Download the Sakila database 
 
-You can find it under "Example Databases" at L<http://dev.mysql.com/doc/>.
+Just run F<$DIST/bin/get-db> 
 
-I suggest putting it in $DIST/rsrc.
-
-There is a script there that will download and unpack the
-database. Ideally it would apply a patch to fix the sql errors, but
-that is a project for another time.
-
-=head3 Fix the SQL errors
-
-Once downloaded, unpack it and fix the sql as follows.
-
-a.postal_code AS `zip code` should be 
-a.postal_code AS `zip_code`.
-
-This problem occurs twice. Hopefully my forum posts
-L<http://forums.mysql.com/read.php?121,276811,276811#msg-276811> will
-lead to this being addressed
-
-=head3 Load into MySQL
-
-Follow the instructions for loading it into MySQL given at
-L<http://dev.mysql.com/doc/sakila/en/sakila.html>. 
+This will download the Sakila database and fix two typos in the
+schema: L<http://forums.mysql.com/read.php?121,276811,276811#msg-276811>
 
 
-=head2 Configure your database connection
+=head2 Install Sakila Database
 
-in F<$DIST/lib/MyDB.pm> are parameters for connecting to a database. I
-am using L<Rose::Conf> (in particular L<Rose::Conf::FileBased>) for
-configuration, so the actual connection parameters for the database
-our outside of source control in a F<local.conf> file.
+Run F<$DIST/bin/build-db.pl> 
 
-=head3 Optionally create $ENV{'ROSE_CONF_FILE_ROOT'}/local.conf
+This script will build a configuration file, F<$DIST/bin/local.conf>
+which will be used by L</Rose::DB::Object> in the subsequent steps. It
+will also print two system commands to STDOUT which you must run to
+build the Sakila database.
+
+For some reason, these commands don't work from within a Perl program.
+
+=head2 Point Rose::DB::Object::Loader at the Sakila database
+
+After sourcing the config file, run loader:pl:
+
+  cd $DIST/bin
+  . ./config
+  ./loader.pl
+
+
+
+=head2 Now it's time to play!
+
+  cd $DIST/bin
+  ./rdbofaq list_actors
+
+You can call F<rdbofaq> with the name of any .pm file in 
+$DIST/lib/MyApp/Command/*
+
+

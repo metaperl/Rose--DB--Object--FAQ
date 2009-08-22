@@ -1,5 +1,0 @@
-
-
-wget http://downloads.mysql.com/docs/sakila-db.zip
-unzip sakila-db.zip
-

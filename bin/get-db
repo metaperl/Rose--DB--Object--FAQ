@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+mkdir tmp
+cd tmp
+wget http://downloads.mysql.com/docs/sakila-db.zip
+unzip sakila-db.zip
+
+cd sakila-db
+perl -pi'*.orig' -e 's/zip code/zip_code/' sakila-schema.sql
