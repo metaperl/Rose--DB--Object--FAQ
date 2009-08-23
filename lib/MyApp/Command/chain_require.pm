@@ -4,13 +4,28 @@ use MyApp -command;
 use strict;
 use warnings;
 
+sub opt_spec {
+    return (
+      [ "--single",  "use a single query to get results" ],
+      [ "recheck|r",  "recheck all results"       ],
+    );
+}
+
 sub run 
-{
+{    
+
+    my ($self, $opt, $args) = @_;
+
+    my @require = $opt->{single} 
+      ? (require_objects => [ 'city.country' ]) 
+	: ()
+	  ;
+
     my $as = MySchema::Address::Manager->get_address
       ( 
 
        query => [ address_id => 1 ] ,
-       required_objects => [ 'city.country' ]
+       @require
        
       );
 

@@ -21,6 +21,10 @@ Terrence Brannon, C<< <metaperl at gmail.com> >>
   $Rose::DB::Object::Manager::Debug = 1;
   $Rose::DB::Object::Debug = 1;
 
+=head2 How to add custom SQL to a class
+
+C<make_manager_method_from_sql> documented in L<Rose::DB::Object::Manager> does this.
+
 =head2 How to control RDBO error throwing?
 
 L<http://groups.google.com/group/rose-db-object/browse_thread/thread/ad0ebc1e8af314ce#>
