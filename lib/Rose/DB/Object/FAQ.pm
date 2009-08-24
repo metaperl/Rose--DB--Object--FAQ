@@ -54,9 +54,18 @@ L<http://groups.google.com/group/rose-db-object/browse_thread/thread/77a77ffb075
 It's documented here:
 L<http://search.cpan.org/dist/Rose-DB-Object/lib/Rose/DB/Object/QueryBuilder.pm#query> 
 
-=head2 Correlated subqueries
+=head2 Subqueries
+
+=head3 Nested subqueries
+
+L<http://groups.google.com/group/rose-db-object/browse_thread/thread/87e59e6d0fab01b0#>
+
+=head3 Correlated subqueries
+
 
 =head3 example
+
+This is not a good example. It would be better done with C<< get_objects_from_sql >>
 
 L<http://groups.google.com/group/rose-db-object/browse_thread/thread/977fe1f6a92e2e4d#>
 
