@@ -22,3 +22,15 @@ MyDB->register_db
 
   );
 
+MyDB->register_db
+  (
+   domain   => 'development',
+   type     => 'leads2',
+   driver   => 'MySQL',
+   database => 'leads2_staging',
+   host     => $SYS_CONF{host},
+   username => $SYS_CONF{username},
+   password => $SYS_CONF{password},
+
+  );
+
