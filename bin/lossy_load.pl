@@ -24,6 +24,9 @@ use Rose::DB::Object::Metadata::Auto;
 
 my $db = MyDB->new(type => 'main', domain => 'development');
 
+my @tbl = $db->make_modules;
+die "@tbl";
+
 my @table = $db->list_tables;
 
 warn Dumper(\@table);

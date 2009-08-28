@@ -4,6 +4,12 @@ use MyApp -command;
 use strict;
 use warnings;
 
+
+sub run { 
+    my ($self, $opt, $args) = @_; 
+    my $method = shift @$args; $self->$method($opt, $args); 
+}
+
 sub dbic
 {
     warn 'dbix class';
